@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>crousel</title>
+	<link rel="stylesheet" href="carousel.css">
+	<script src="jquery.min.js"></script>
+	<script src="carousel.js"></script>
+</head>
+<body style="padding:50px">
+	<div class="J_Poster poster-main" data-setting='{
+			"width":1000,
+			"height":351,
+			"posterWidth":800,
+			"posterHeight":351,
+			"scale":0.9,
+			"speed":600,
+			"autoplay":true,
+			"delay":2000,
+			"abc":123,
+			"verticalAlign":"middle"
+		}'>
+		<div class="poster-btn poster-prev-btn"></div>
+		<ul class="poster-list">
+			<li class="poster-item"><a href=""><img src="images/banner_cy04.jpg" alt="" width="100%"></a></li>
+			<li class="poster-item"><a href=""><img src="images/banner_cy05.jpg" alt="" width="100%"></a></li>
+			<li class="poster-item"><a href=""><img src="images/banner_cy06.jpg" alt="" width="100%"></a></li>
+			<li class="poster-item"><a href=""><img src="images/banner_cy07.jpg" alt="" width="100%"></a></li>
+			<li class="poster-item"><a href=""><img src="images/banner_cy08.jpg" alt="" width="100%"></a></li>
+		</ul>
+		<div class="poster-btn poster-next-btn"></div>
+	</div>
+
+
+	<script>
+	$(function() {
+		//var carousel = new Carousel($(".J_Poster").eq(0));
+		Carousel.init($(".J_Poster"));
+	})
+	</script>
+</body>
+</html>
