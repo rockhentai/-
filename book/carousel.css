@@ -1,0 +1,65 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight: normal;
+}
+
+body {
+	color:#666;
+	background-color: #fff;
+	font:12px/1.5 '微软雅黑',tahoma,arial,'Hiragino Sans GB',宋体,sans-serif;
+}
+
+.left {
+	float: left;
+	margin-right: 50px;
+}
+
+.poster-main {
+	width: 800px;
+	height: 439px;
+	position: relative;
+	float: left;
+}
+
+.poster-main a,.poster-main img {
+	display: block;
+}
+
+.poster-main .poster-list {
+	width: 800px;
+	height: 439px;
+}
+
+.poster-main .poster-btn {
+	position: absolute;
+	width: 100px;
+	height: 439px;
+	top:0;
+	z-index: 10;
+	cursor: pointer;
+}
+
+.poster-main .poster-prev-btn {
+	left: 0;
+	background:url(images/sl.png) center center no-repeat;
+}
+
+.poster-main .poster-next-btn {
+	right: 0;
+	background:url(images/sr.png) center center no-repeat;
+}
+
+.poster-main .poster-list .poster-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+}

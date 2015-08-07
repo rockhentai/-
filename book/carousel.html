@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>crousel</title>
+	<link rel="stylesheet" href="carousel.css">
+	<script src="jquery.min.js"></script>
+	<script src="carousel.js"></script>
+</head>
+<body style="padding:50px">
+	<div class="left">
+		<div class="cover">
+			<img src="img/book3.png" alt="" id="book-cover">
+		</div>
+		<div class="detail">
+			<h3 class="title"></h3>
+			<div class="erwm">
+				<img src="" alt="">
+			</div>
+			<div class="information">
+				<p>作者：<span>王颖</span></p>
+				<p>出版社：<span>花城出版社</span></p>
+				<p>时间：<span>2011/8/1</span></p>
+			</div>
+		</div>
+	</div>
+	<div class="J_Poster poster-main" data-setting='{
+			"width":600,
+			"height":301,
+			"posterWidth":216,
+			"posterHeight":301,
+			"scale":0.9,
+			"speed":600,
+			"autoplay":false,
+			"delay":2000,
+			"abc":123,
+			"verticalAlign":"middle"
+		}'>
+		<div class="poster-btn poster-prev-btn"></div>
+		<ul class="poster-list">
+			<li class="poster-item"><a href="#"><img src="img/book1.jpg" alt="" width="100%" title="每天读一点世界文化常识"></a></li>
+			<li class="poster-item"><a href="#"><img src="img/book2.jpg" alt="" width="100%"></a></li>
+			<li class="poster-item"><a href="#"><img src="img/book1.jpg" alt="" width="100%"></a></li>
+			<li class="poster-item"><a href="#"><img src="img/book2.jpg" alt="" width="100%"></a></li>
+			<li class="poster-item"><a href="#"><img src="img/book1.jpg" alt="" width="100%"></a></li>
+		</ul>
+		<div class="poster-btn poster-next-btn"></div>
+	</div>
+	
+
+	<script>
+	$(function() {
+		//var carousel = new Carousel($(".J_Poster").eq(0));
+		Carousel.init($(".J_Poster"));
+
+		$('.poster-item').each(function() {
+			var li = $(this);
+			var img = li.find('img');
+			var thesrc = img.attr('src');
+			var title = img.attr('title');
+			li.click(function() {
+				$('#book-cover').attr('src',thesrc).fadeIn();
+				$('.title').text(title);
+			})
+		});
+	})
+	</script>
+</body>
+</html>
