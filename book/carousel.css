@@ -20,7 +20,28 @@ body {
 
 .left {
 	float: left;
-	margin-right: 50px;
+	width:530px;
+	padding-right: 60px;
+}
+
+.left .cover,.left .detail {
+	float: left;
+}
+
+.left .cover {
+	margin-left: 10px;
+	margin-right: 30px;
+	width: 216px;
+}
+
+#book-cover {
+	width:100%;
+}
+
+.left .detail h3 {
+	font-size: 24px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
 .poster-main {

@@ -13,7 +13,7 @@
 			<img src="img/book3.png" alt="" id="book-cover">
 		</div>
 		<div class="detail">
-			<h3 class="title"></h3>
+			<h3 class="title">梁上缘</h3>
 			<div class="erwm">
 				<img src="" alt="">
 			</div>
@@ -39,7 +39,7 @@
 		<div class="poster-btn poster-prev-btn"></div>
 		<ul class="poster-list">
 			<li class="poster-item"><a href="#"><img src="img/book1.jpg" alt="" width="100%" title="每天读一点世界文化常识"></a></li>
-			<li class="poster-item"><a href="#"><img src="img/book2.jpg" alt="" width="100%"></a></li>
+			<li class="poster-item"><a href="#"><img src="img/book2.jpg" alt="" width="100%" title="我站在桥上看风景"></a></li>
 			<li class="poster-item"><a href="#"><img src="img/book1.jpg" alt="" width="100%"></a></li>
 			<li class="poster-item"><a href="#"><img src="img/book2.jpg" alt="" width="100%"></a></li>
 			<li class="poster-item"><a href="#"><img src="img/book1.jpg" alt="" width="100%"></a></li>
@@ -59,7 +59,17 @@
 			var thesrc = img.attr('src');
 			var title = img.attr('title');
 			li.click(function() {
-				$('#book-cover').attr('src',thesrc).fadeIn();
+				$('#book-cover').attr('src',thesrc).css({
+					'width':'250px',
+					'opacity':'0',
+					'margin-left':'-34px',
+					'margin-top':'-24px'
+				}).animate({
+					'width':'100%',
+					'opacity':'1',
+					'margin-left':'0',
+					'margin-top':'0'
+				},800);
 				$('.title').text(title);
 			})
 		});
