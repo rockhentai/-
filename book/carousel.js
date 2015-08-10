@@ -43,6 +43,22 @@
 				self.rotateFlag = false;
 				self.carouseRotate("left");
 			}
+			//self.bookAnimation();
+		});
+
+		this.posterItems.each(function() {
+			var li = $(this);
+			li.click(function() { 
+				var index = li.css('zIndex');
+				if(index==2) {
+
+				} else {
+					if(self.rotateFlag) {
+					self.rotateFlag = false;
+					self.carouseRotate("right");
+				}
+				}
+			});
 		});
 
 		this.prevBtn.click(function() {
@@ -50,6 +66,7 @@
 				self.rotateFlag = false;
 				self.carouseRotate("right");
 			}
+			//self.bookAnimation();
 		});
 
 		//是否播放自动播放
@@ -200,9 +217,11 @@
 			var _this_ = this;
 
 			var zIndexArr = [];
+
 			if(dir === "left") {
 				this.posterItems.each(function() {
 					var self = $(this);
+
 					var prev = self.prev().get(0)?self.prev():_this_.posterLastItem;
 					var width = prev.width();
 					var height = prev.height();

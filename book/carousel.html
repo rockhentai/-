@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>crousel</title>
 	<link rel="stylesheet" href="carousel.css">
-	<script src="jquery.min.js"></script>
+	<script src="jquery.js"></script>
 	<script src="carousel.js"></script>
 </head>
 <body style="padding:50px">
@@ -14,13 +14,15 @@
 		</div>
 		<div class="detail">
 			<h3 class="title">梁上缘</h3>
-			<div class="erwm">
-				<img src="" alt="">
-			</div>
-			<div class="information">
-				<p>作者：<span>王颖</span></p>
-				<p>出版社：<span>花城出版社</span></p>
-				<p>时间：<span>2011/8/1</span></p>
+			<div class="box">
+				<div class="erwm">
+					<img src="img/erwm.jpg" alt="">
+				</div>
+				<div class="information">
+					<p>作者：<span>王颖</span></p>
+					<p>出版社：<span>花城出版社</span></p>
+					<p>时间：<span>2011/8/1</span></p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -36,7 +38,7 @@
 			"abc":123,
 			"verticalAlign":"middle"
 		}'>
-		<div class="poster-btn poster-prev-btn"></div>
+		<!-- <div class="poster-btn poster-prev-btn"></div> -->
 		<ul class="poster-list">
 			<li class="poster-item"><a href="#"><img src="img/book1.jpg" alt="" width="100%" title="每天读一点世界文化常识"></a></li>
 			<li class="poster-item"><a href="#"><img src="img/book2.jpg" alt="" width="100%" title="我站在桥上看风景"></a></li>
@@ -44,7 +46,7 @@
 			<li class="poster-item"><a href="#"><img src="img/book2.jpg" alt="" width="100%"></a></li>
 			<li class="poster-item"><a href="#"><img src="img/book1.jpg" alt="" width="100%"></a></li>
 		</ul>
-		<div class="poster-btn poster-next-btn"></div>
+		<!-- <div class="poster-btn poster-next-btn"></div> -->
 	</div>
 	
 
@@ -52,27 +54,32 @@
 	$(function() {
 		//var carousel = new Carousel($(".J_Poster").eq(0));
 		Carousel.init($(".J_Poster"));
-
-		$('.poster-item').each(function() {
-			var li = $(this);
-			var img = li.find('img');
-			var thesrc = img.attr('src');
-			var title = img.attr('title');
-			li.click(function() {
-				$('#book-cover').attr('src',thesrc).css({
-					'width':'250px',
-					'opacity':'0',
-					'margin-left':'-34px',
-					'margin-top':'-24px'
-				}).animate({
-					'width':'100%',
-					'opacity':'1',
-					'margin-left':'0',
-					'margin-top':'0'
-				},800);
-				$('.title').text(title);
-			})
-		});
+		bookAnimate();
+		
+		function bookAnimate() {
+			$('.poster-item').each(function() {
+				var li = $(this);
+				var img = li.find('img');
+				var thesrc = img.attr('src');
+				var title = img.attr('title');
+				var index = li.css('z-index');
+				li.click(function() {
+					//alert(index);
+					$('#book-cover').attr('src',thesrc).css({
+						'width':'250px',
+						'opacity':'0',
+						'margin-left':'-34px',
+						'margin-top':'-24px'
+					}).animate({
+						'width':'100%',
+						'opacity':'1',
+						'margin-left':'0',
+						'margin-top':'0'
+					},800);
+					$('.title').text(title);
+				})
+			});
+		}
 	})
 	</script>
 </body>
